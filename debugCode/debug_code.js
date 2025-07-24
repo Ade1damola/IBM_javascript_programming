@@ -6,26 +6,39 @@
         // Check if inputs are valid numbers
         if (!isNaN(num1) && !isNaN(num2)) {
         // Perform the operation
-                        let result = multiply(num1, num2);
+            let result1 = add(num1, num2);
+            let result2 = multiply(num1, num2);
+            let result3 = divide(num1, num2);
     
-                        // Display the result
-                        displayResult(result);
-                    } else {
-                        displayResult('Please enter valid numbers');
-                    }
+            // Display the result
+            displayResult(result1, result2, result3);
+        } else {
+                    displayResult('Please enter valid numbers');
                 }
+    }
     
-                function multiply(a, b) {
-                    // Introduce a debugger statement to pause execution
-                    debugger;
+    function multiply(a, b) {
+        // Multiply the numbers
+        return a * b;
+    }
+
+    function add(a, b) {
+        // Add the numbers
+        return a + b;
+    }
+
+    function divide(a, b) {
+        // Divide the numbers
+        return a / b;
+    }
     
-                    // Multiply the numbers
-                    return a * b;
-                }
-    
-                function displayResult(result) {
-                    // Display the result in the paragraph element
-                    const resultElement = document.getElementById('result');
-                    resultElement.textContent = `The result is: ${result}`;
-                }
+    function displayResult(result1, result2, result3) {
+        // Display the results in the paragraph element
+        const additionElement = document.getElementById('addition');
+        additionElement.textContent = `The addition is: ${result1}`;
+        const multiplicationElement = document.getElementById('multiplication');
+        multiplicationElement.textContent = `The multiplication is: ${result2}`;
+        const divisionElement = document.getElementById('division');
+        divisionElement.textContent = `The division is: ${result3}`;
+    }
             
